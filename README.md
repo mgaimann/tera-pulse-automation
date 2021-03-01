@@ -1,6 +1,6 @@
 # Tera Pulse Automation (TPA)
-Readme Version: 1.1 (September 2017 / uploaded and formatted February 2021)  
-TPA Version:  3.2  
+Readme Version: 1.1 (September 2017 / uploaded and formatted March 2021)  
+TPA Version:  3.3
 
 *Thanks for reading the TPA Readme Document!*  
 Its purpose is to sum up the relevant information required to
@@ -48,12 +48,13 @@ and turn both MDrive 23 and Lake Shore 331 on
 	and inputs at wrong positions.
 
 
-- Install Python 2.7 and required package
-	TPA will not work with Python 3.x due to some commands
-	such as "raw_input".  
-
-  - Install the `serial` package for handling serial controllers
-  - Install the `pyautogui` package for automating keyboard and mouse controls  
+- Install Python 2.x (for `TPA32.py`) or Python 3.x (for `TPA33.py`) and required packages
+ 
+  - Install the PySerial (`serial`) package for handling serial controllers
+  - Install the PyAutoGUI (`pyautogui`) package for automating keyboard and mouse controls  
+  - Install the PyVISA (`visa`) package for measurement device control
+  - Install the Colorama (`colorama`) package for making ANSI escape character sequences work under Microsoft Windows
+  - Install `matplotlib` and `numpy` for data processing and visualization
   - The `msvcrt` package is required to access routines from the Microsoft VC++ runtime (there is no multiplatform solution available unfortunately).  
 
 
@@ -113,7 +114,7 @@ programme that the following steps are taken:
 	the search bar, when clicking on the Windows "Start"
 	button, and then press Enter
 	or follow this path: `C:\Windows\System32\cmd.exe`
-	or simply doubleclick on the `TPA32.py` file.  
+	or simply doubleclick on the `TPAxx.py` file.  
 
 
 2.	Move to the Desktop folder  
@@ -127,7 +128,7 @@ programme that the following steps are taken:
 
 3.	Run the TPA file with Python
 
-	Enter `python TPA32.py` to run the code. You should then
+	Enter `python TPAxx.py` to run the code. You should then
 	see the starting screen, where you will be guided through
 	the initialisation set-up.  
 
