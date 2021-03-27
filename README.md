@@ -6,7 +6,28 @@ TPA Version:  3.3
 Its purpose is to sum up the relevant information required to
 run TPA smoothly and provide some guidance for troubleshooting.  
 
-**Disclaimer**  
+## What is TPA?
+This software originated during a [DAAD RISE internship](https://www.daad.de/rise/en/) with Prof. Dr. Axel Zeitler's [Terahertz Applications Group](https://thz.ceb.cam.ac.uk/News/summer2017), Department of Chemical Engineering and Biotechnology, University of Cambridge.  
+During my terahertz spectroscopy measurements I thought about how the manual measurement process could be automated in a simple way, with the knowledge and tools available at that time. The result is my TPA software presented here. It is by no means perfect, and constitutes one of my first coding projects.  
+Note that the [publication](https://doi.org/10.1016/j.ijpx.2019.100022) that was co-authored as part of the internship does not relate to the software uploaded here. 
+
+## How does TPA work?
+TPA automates all manual steps related to the measurement process, including
+- moving a sample holder with two samples via a motor, manually done via the so-called IMS Terminal
+- cooling the sample holder down with liquid nitrogen, manually by adjusting nitrogen flow
+- heating the sample holder up to a specified temperature using a heating system
+- checking and adapting the temperature using a temperature controller
+- entering parameters and operating the TeraView software  
+
+
+This is done by 
+- controlling motor movement via a serial connection and PySerial
+- operating the temperature control via a GPIB IEEE-488 connection and PyVISA
+- executing mouse clicks and keyboard input via PyAutoGUI and the msvcrt package  
+
+![alt text](./img/screen.png "TeraView Interface")
+
+## Disclaimer 
 This software comes without any warranty. It is not associated by any means with TeraView Ltd. or any of its products, such as TeraPulse.   
 > THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE COPYRIGHT HOLDERS OR ANYONE DISTRIBUTING THE SOFTWARE BE LIABLE FOR ANY DAMAGES OR OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  
@@ -55,7 +76,7 @@ and turn both MDrive 23 and Lake Shore 331 on
   - Install the PyVISA (`visa`) package for measurement device control
   - Install the Colorama (`colorama`) package for making ANSI escape character sequences work under Microsoft Windows
   - Install `matplotlib` and `numpy` for data processing and visualization
-  - The `msvcrt` package is required to access routines from the Microsoft VC++ runtime (there is no multiplatform solution available unfortunately).  
+  - The `msvcrt` package is required to access routines from the Microsoft VC++ runtime (there is no multiplatform solution available unfortunately)  
 
 
 - Enter correct GPIB settings for the Lake Shore 331:  
