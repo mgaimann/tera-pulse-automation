@@ -19,6 +19,7 @@ TPA automates all manual steps related to the measurement process, including
 - checking and adapting the temperature using a temperature controller
 - entering parameters and operating the TeraView software  
 
+![alt text](./img/TPAmainloop.png "Command Line")
 
 This is done by 
 - controlling motor movement via a serial connection and PySerial
